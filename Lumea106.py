@@ -11,12 +11,17 @@ from selenium.common.exceptions import NoSuchElementException, ElementClickInter
 from threading import Thread
 from selenium.webdriver.common.action_chains import ActionChains
 import random
+from selenium.webdriver.firefox.options import Options
 # Set up the service and options
-service = Service(executable_path='D:/TriburileProject/geckodriver.exe')  # Adjust path if necessary
-options = webdriver.FirefoxOptions()
+options = Options()
+options.add_argument("--headless")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+# Set up the service and options
 options.add_argument("-profile")
 options.add_argument("C:/Users/user/AppData/Roaming/Mozilla/Firefox/Profiles/8j3093g1.myUser")  # Use your profile path
 
+service = Service(executable_path='D:/TriburileProject/geckodriver.exe')  # Adjust path if necessary
 # Initialize the driver
 driver = webdriver.Firefox(service=service, options=options)
 
