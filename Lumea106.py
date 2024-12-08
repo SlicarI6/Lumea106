@@ -19,9 +19,11 @@ options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 # Set up the service and options
 options.add_argument("-profile")
-options.add_argument("C:/Users/user/AppData/Roaming/Mozilla/Firefox/Profiles/8j3093g1.myUser")  # Use your profile path
+# options.add_argument("C:/Users/user/AppData/Roaming/Mozilla/Firefox/Profiles/8j3093g1.myUser")  # Use your profile path
 
-service = Service(executable_path='D:/TriburileProject/geckodriver.exe')  # Adjust path if necessary
+# service = Service(executable_path='D:/TriburileProject/geckodriver.exe')  # Adjust path if necessary
+service = Service(executable_path='/opt/render/project/src/geckodriver')
+
 # Initialize the driver
 driver = webdriver.Firefox(service=service, options=options)
 
@@ -48,6 +50,7 @@ EC.visibility_of_element_located((By.XPATH, '//*[@id="manager_icon_farm"]'))
 )
 print("Elementul manager_icon_farm a fost găsit.")
 click_assistenta_farmare.click()
+
 
 def click_protectie_bot(driver):
     # Verifică dacă butonul "Începeți verificarea protecției bot" este vizibil
