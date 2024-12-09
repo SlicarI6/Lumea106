@@ -16,10 +16,11 @@ from selenium.webdriver.firefox.options import Options
 options = Options()
 options.add_argument("--headless")
 options.add_argument("--no-sandbox")
+options.add_argument("--disable-gpu")
 options.add_argument("--disable-dev-shm-usage")
 # Set up the service and options
-options.add_argument("-profile")
-options.add_argument("C:/Users/user/AppData/Roaming/Mozilla/Firefox/Profiles/8j3093g1.myUser")  # Use your profile path
+# options.add_argument("-profile")
+# options.add_argument("C:/Users/user/AppData/Roaming/Mozilla/Firefox/Profiles/8j3093g1.myUser")  # Use your profile path
 
 # service = Service(executable_path='D:/TriburileProject/geckodriver.exe')  # Adjust path if necessary
 service = Service(executable_path='/usr/local/bin/geckodriver')
