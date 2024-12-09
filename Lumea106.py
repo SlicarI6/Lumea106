@@ -23,7 +23,9 @@ options.add_argument("--disable-dev-shm-usage")
 # options.add_argument("C:/Users/user/AppData/Roaming/Mozilla/Firefox/Profiles/8j3093g1.myUser")  # Use your profile path
 
 # service = Service(executable_path='D:/TriburileProject/geckodriver.exe')  # Adjust path if necessary
-service = Service(executable_path='/usr/local/bin/geckodriver')
+# service = Service(executable_path='/usr/local/bin/geckodriver')
+service = Service(executable_path='D:/Lumea106/geckodriver')
+
 # Initialize the driver
 driver = webdriver.Firefox(service=service, options=options)
 
